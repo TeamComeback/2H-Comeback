@@ -6,7 +6,13 @@ on:
     # normal weekdays); 22:40 covers the evening slate through the last West Coast halftime.
     - cron: "40 16 * * *"
     - cron: "40 22 * * *"
-  workflow_dispatch: {}   # "Run workflow" button for starting it manually from your phone
+  workflow_dispatch:      # "Run workflow" button for starting it manually from your phone
+    inputs:
+      mode:
+        description: "watch = run the alert bot, test = send a sample alert to your phone"
+        type: choice
+        options: [watch, test]
+        default: watch
 
 concurrency:
   group: nba-alerts       # never run two watchers at once
@@ -34,7 +40,21 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           MIN_DEFICIT: "10"
           RUN_MINUTES: "345"
-        run: python nba_halftime_alerts.py
+        run: |
+          if [ "${{ inputs.mode }}" = "test" ]; then
+            python nba_halftime_alerts.py --test
+            python - <<'PY'
+          import os, urllib.request, json
+          k = os.environ.get("ODDS_API_KEY", "")
+          if not k:
+              print("ODDS_API_KEY secret is missing")
+          else:
+              with urllib.request.urlopen(f"https://api.the-odds-api.com/v4/sports?apiKey={k}") as r:
+                  print("Odds API key OK - credits remaining:", r.headers.get("x-requests-remaining"))
+          PY
+          else
+            python nba_halftime_alerts.py
+          fi
 
       - name: Save alert log
         if: always()
