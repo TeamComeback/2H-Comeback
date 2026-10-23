@@ -2,10 +2,13 @@ name: NBA halftime alerts
 
 on:
   schedule:
-    # Times are UTC. 16:40 catches weekend/holiday afternoon slates (exits right away on
-    # normal weekdays); 22:40 covers the evening slate through the last West Coast halftime.
+    # Times are UTC. Only two runs a day, timed around games:
+    #  16:40 UTC (12:40pm EDT / 11:40am EST): weekend/holiday afternoon games; exits in
+    #    seconds on days with nothing in the afternoon.
+    #  23:15 UTC (7:15pm EDT / 6:15pm EST): the evening slate. Runs ~5h45m, so it covers
+    #    the latest West Coast halftimes (10:30pm ET tips) in both EDT and EST.
     - cron: "40 16 * * *"
-    - cron: "40 22 * * *"
+    - cron: "15 23 * * *"
   workflow_dispatch:      # "Run workflow" button for starting it manually from your phone
     inputs:
       mode:
