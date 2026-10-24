@@ -1,0 +1,5 @@
+date_et,game_id,matchup,trailing,leading,trail_half,lead_half,deficit,trail_is_home,late_alert,alert_time_et,pregame_line,pregame_total,dk_live_spread_trail,dk_live_spread_price,dk_live_total,dk_2h_spread_trail,dk_2h_spread_price,dk_2h_total,odds_status,final_trail,final_lead,trail_2h_pts,lead_2h_pts,trail_2h_margin,cover_2h_spread,cover_live_spread,trail_won,graded
+20261023,401909845,MIN @ ORL,Orlando Magic,Minnesota Timberwolves,45,57,12,1,0,2026-10-23 20:10:01,,,9.5,-125,220.5,-2.5,-125,118.5,ok,93,115,48,58,-10,L,L,N,1
+20261023,401909843,ATL @ CHA,Charlotte Hornets,Atlanta Hawks,43,68,25,1,0,2026-10-23 20:12:43,,,21.5,-115,223.5,-4.5,-110,110.5,ok,81,128,38,60,-22,L,L,N,1
+20261023,401909844,DAL @ IND,Indiana Pacers,Dallas Mavericks,43,77,34,1,0,2026-10-23 20:24:31,,,20.5,-115,237.5,-12.5,-120,115.5,ok,105,121,62,44,18,W,W,N,1
+20261023,401909847,DET @ MIA,Miami Heat,Detroit Pistons,53,65,12,1,0,2026-10-23 21:14:42,,,7.5,-110,230.5,-2.5,-115,113.5,ok,,,,,,,,,
