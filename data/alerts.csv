@@ -7,3 +7,7 @@ date_et,game_id,matchup,trailing,leading,trail_half,lead_half,deficit,trail_is_h
 20261024,401909856,HOU @ ATL,Atlanta Hawks,Houston Rockets,48,59,11,1,0,2026-10-24 21:43:53,,,7.5,-105,223.5,-2.5,-115,115.5,ok,114,121,66,62,4,W,W,N,1
 20261024,401909859,NO @ DEN,Denver Nuggets,New Orleans Pelicans,57,73,16,1,0,2026-10-24 22:11:01,,,6.5,-115,250.5,-10.5,-115,117.5,ok,141,135,84,62,22,W,W,Y,1
 20261025,401909866,DET @ PHI,Philadelphia 76ers,Detroit Pistons,44,56,12,1,0,2026-10-25 20:48:55,,,9.5,-120,210.5,-3.5,-115,110.5,ok,93,106,49,50,-1,L,L,N,1
+20261026,401909868,WSH @ CHA,Washington Wizards,Charlotte Hornets,44,54,10,0,0,2026-10-26 20:09:43,,,8.5,-115,207.5,-1.5,-115,109.5,ok,103,110,59,56,3,W,W,N,1
+20261026,401909870,CHI @ BOS,Chicago Bulls,Boston Celtics,54,66,12,0,0,2026-10-26 20:38:41,,,16.5,-120,240.5,4.5,-115,120.5,ok,99,134,45,68,-23,L,L,N,1
+20261026,401909872,IND @ MIL,Milwaukee Bucks,Indiana Pacers,50,61,11,1,0,2026-10-26 21:07:17,,,9.5,-120,233.5,0.5,-120,124.5,ok,110,102,60,41,19,W,W,Y,1
+20261026,401909873,PHX @ OKC,Phoenix Suns,Oklahoma City Thunder,53,67,14,0,0,2026-10-26 21:08:19,,,12.5,-105,227.5,-1.5,-105,107.5,ok,114,125,61,58,3,W,W,N,1
