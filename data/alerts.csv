@@ -18,3 +18,5 @@ date_et,game_id,matchup,trailing,leading,trail_half,lead_half,deficit,trail_is_h
 20261028,401909887,HOU @ MIL,Milwaukee Bucks,Houston Rockets,35,57,22,1,0,2026-10-28 21:07:17,,,21.5,-120,207.5,-0.5,-120,115.5,ok,100,132,65,75,-10,L,L,N,1
 20261028,401909889,DEN @ NO,New Orleans Pelicans,Denver Nuggets,45,57,12,1,0,2026-10-28 21:08:38,,,9.5,-110,224.5,-1.5,-120,121.5,ok,91,104,46,47,-1,L,L,N,1
 20261028,401909888,GS @ MIN,Minnesota Timberwolves,Golden State Warriors,48,64,16,1,0,2026-10-28 21:14:40,,,10.5,-110,228.5,-5.5,-110,116.5,ok,114,119,66,55,11,W,W,N,1
+20261030,401909278,CHI @ BOS,Chicago Bulls,Boston Celtics,49,78,29,0,0,2026-10-30 20:44:26,,,31.5,-110,250.5,2.5,-110,122.5,ok,111,125,62,47,15,W,W,N,1
+20261030,401909284,LAC @ MIN,LA Clippers,Minnesota Timberwolves,56,69,13,0,0,2026-10-30 21:04:12,,,11.5,-110,241.5,-0.5,-120,116.5,ok,101,127,45,58,-13,L,L,N,1
