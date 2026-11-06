@@ -35,3 +35,4 @@ date_et,game_id,matchup,trailing,leading,trail_half,lead_half,deficit,trail_is_h
 20261104,401909926,CHI @ NY,Chicago Bulls,New York Knicks,52,84,32,0,0,2026-11-04 20:46:00,,,31.5,-110,256.5,-0.5,-110,120.5,ok,105,135,53,51,2,W,W,N,1
 20261104,401909929,CLE @ OKC,Cleveland Cavaliers,Oklahoma City Thunder,44,60,16,0,0,2026-11-04 21:06:49,,,13.5,-120,220.5,-2.5,-120,116.5,ok,116,124,72,64,8,W,W,N,1
 20261104,401909932,POR @ PHX,Phoenix Suns,Portland Trail Blazers,59,72,13,1,0,2026-11-04 22:13:31,,,10.5,-110,241.5,-1.5,-110,110.5,ok,119,132,60,60,0,L,L,N,1
+20261105,401909936,ORL @ PHX,Orlando Magic,Phoenix Suns,51,63,12,0,1,2026-11-05 22:26:21,,,8.5,-110,223.5,-3.5,-110,109.5,ok,104,117,53,54,-1,L,L,N,1
