@@ -39,3 +39,6 @@ date_et,game_id,matchup,trailing,leading,trail_half,lead_half,deficit,trail_is_h
 20261106,401909291,OKC @ MEM,Memphis Grizzlies,Oklahoma City Thunder,49,71,22,1,1,2026-11-06 21:47:06,,,22.5,-120,239.5,0.5,-115,120.5,ok,97,128,48,57,-9,L,L,N,1
 20261106,401909294,POR @ LAL,Los Angeles Lakers,Portland Trail Blazers,50,60,10,1,0,2026-11-06 23:22:57,,,5.5,-110,224.5,-4.5,-120,112.5,ok,124,118,74,58,16,W,W,Y,1
 20261106,401909295,SA @ SAC,Sacramento Kings,San Antonio Spurs,56,75,19,1,0,2026-11-06 23:27:39,,,25.5,-110,247.5,6.5,-115,115.5,ok,109,124,53,49,4,W,W,N,1
+20261107,401909938,DEN @ IND,Indiana Pacers,Denver Nuggets,41,64,23,1,0,2026-11-07 18:13:15,,,23.5,-115,223.5,-1.5,-120,113.5,ok,102,114,61,50,11,W,W,N,1
+20261107,401909941,WSH @ OKC,Washington Wizards,Oklahoma City Thunder,36,57,21,0,0,2026-11-07 21:08:18,,,23.5,-120,203.5,3.5,-120,109.5,ok,,,,,,,,,
+20261107,401909940,NY @ CLE,Cleveland Cavaliers,New York Knicks,53,63,10,1,0,2026-11-07 21:10:19,,,9.5,-105,224.5,-0.5,-105,108.5,ok,,,,,,,,,
