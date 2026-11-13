@@ -61,3 +61,4 @@ date_et,game_id,matchup,trailing,leading,trail_half,lead_half,deficit,trail_is_h
 20261111,401909970,DEN @ MEM,Memphis Grizzlies,Denver Nuggets,52,65,13,1,0,2026-11-11 21:03:54,,,12.5,-120,235.5,-0.5,-115,117.5,ok,118,123,66,58,8,W,W,N,1
 20261111,401909971,LAL @ MIL,Milwaukee Bucks,Los Angeles Lakers,50,61,11,1,0,2026-11-11 21:05:36,,,17.5,-115,222.5,6.5,-115,111.5,ok,112,123,62,62,0,W,W,N,1
 20261111,401909972,BKN @ NO,New Orleans Pelicans,Brooklyn Nets,66,83,17,1,0,2026-11-11 21:17:43,,,12.5,-115,260.5,-4.5,-115,111.5,ok,111,145,45,62,-17,L,L,N,1
+20261112,401909978,DAL @ MIN,Dallas Mavericks,Minnesota Timberwolves,52,67,15,0,0,2026-11-12 21:05:44,,,13.5,-120,229.5,-1.5,-115,109.5,ok,94,133,42,66,-24,L,L,N,1
