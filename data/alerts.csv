@@ -64,5 +64,5 @@ date_et,game_id,matchup,trailing,leading,trail_half,lead_half,deficit,trail_is_h
 20261112,401909978,DAL @ MIN,Dallas Mavericks,Minnesota Timberwolves,52,67,15,0,0,2026-11-12 21:05:44,,,13.5,-120,229.5,-1.5,-115,109.5,ok,94,133,42,66,-24,L,L,N,1
 20261113,401909297,MIL @ ORL,Milwaukee Bucks,Orlando Magic,36,52,16,0,0,2026-11-13 20:09:17,,,16.5,-115,202.5,1.5,-120,113.5,ok,99,107,63,55,8,W,W,N,1
 20261113,401909300,MEM @ NO,New Orleans Pelicans,Memphis Grizzlies,58,70,12,1,0,2026-11-13 21:10:37,,,11.5,-115,245.5,-1.5,-105,115.5,ok,111,142,53,72,-19,L,L,N,1
-20261113,401909301,UTAH @ HOU,Utah Jazz,Houston Rockets,53,63,10,0,0,2026-11-13 21:46:26,,,14.5,-110,227.5,5.5,-115,113.5,ok,,,,,,,,,
-20261113,401909302,GS @ SA,Golden State Warriors,San Antonio Spurs,33,63,30,0,0,2026-11-13 22:52:51,,,31.5,-110,207.5,1.5,-110,111.5,ok,,,,,,,,,
+20261113,401909301,UTAH @ HOU,Utah Jazz,Houston Rockets,53,63,10,0,0,2026-11-13 21:46:26,,,14.5,-110,227.5,5.5,-115,113.5,ok,118,125,65,62,3,W,W,N,1
+20261113,401909302,GS @ SA,Golden State Warriors,San Antonio Spurs,33,63,30,0,0,2026-11-13 22:52:51,,,31.5,-110,207.5,1.5,-110,111.5,ok,85,123,52,60,-8,L,L,N,1
