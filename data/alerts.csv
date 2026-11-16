@@ -68,3 +68,6 @@ date_et,game_id,matchup,trailing,leading,trail_half,lead_half,deficit,trail_is_h
 20261113,401909302,GS @ SA,Golden State Warriors,San Antonio Spurs,33,63,30,0,0,2026-11-13 22:52:51,,,31.5,-110,207.5,1.5,-110,111.5,ok,85,123,52,60,-8,L,L,N,1
 20261114,401909983,BKN @ MEM,Brooklyn Nets,Memphis Grizzlies,54,71,17,0,1,2026-11-14 21:38:39,,,12.5,-115,236.5,-4.5,-115,111.5,ok,110,129,56,58,-2,L,L,N,1
 20261114,401909984,CHI @ MIN,Minnesota Timberwolves,Chicago Bulls,45,58,13,1,1,2026-11-14 21:38:40,,,-4.5,-110,218.5,-17.5,-110,115.5,ok,106,117,61,59,2,L,L,N,1
+20261115,401909986,LAL @ PHX,Phoenix Suns,Los Angeles Lakers,54,64,10,1,0,2026-11-15 17:16:31,,,9.5,-115,229.5,-0.5,-120,110.5,ok,123,131,69,67,2,W,W,N,1
+20261115,401909989,DAL @ BOS,Dallas Mavericks,Boston Celtics,37,67,30,0,0,2026-11-15 19:00:20,,,35.5,-120,214.5,3.5,-110,108.5,ok,94,131,57,64,-7,L,L,N,1
+20261115,401909991,HOU @ WSH,Washington Wizards,Houston Rockets,54,73,19,1,0,2026-11-15 20:03:36,,,18.5,-110,238.5,1.5,-120,111.5,ok,119,147,65,74,-9,L,L,N,1
