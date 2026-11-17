@@ -27,10 +27,8 @@ Every alert is saved to `data/alerts.csv` and graded automatically after the gam
 3. **GitHub:** create a new **public** repo (public = free unlimited Actions minutes; your
    keys stay hidden as secrets) and upload these files, keeping the `.github/workflows` folder.
 4. In the repo: **Settings → Secrets and variables → Actions → New repository secret**:
-   - `ODDS_API_KEY_2H` = this bot's own key
-   - (`ODDS_API_KEY` is Perseverance's key. Until `ODDS_API_KEY_2H` exists the bot falls back to it, and then
-     it stops buying odds once that key is below 60 credits so the betting agent keeps its credits. The
-     alert still goes out, with "odds skipped" in place of the line.)
+   - `ODDS_API_KEY` = this bot's own key (since Nov 17 it is the old free key Perseverance used to share;
+     Perseverance now has its own paid key in its own repo). `ODDS_API_KEY_2H`, if added, takes priority.
    - `NTFY_TOPIC` = your topic name
 5. **Actions tab → NBA halftime alerts → Run workflow** to start it now. After that it starts
    itself every day (afternoon slates and the evening slate) and shuts down when games end.
@@ -63,4 +61,9 @@ Until Nov 17 this bot used Perseverance's Odds API key and spent about half of t
 (4 per halftime lookup, more when it retried for a 2nd-half line), which Perseverance's budget could not see.
 Now each lookup buys only the 2nd-half spread and total (2 credits; the full-game live line is no longer
 recorded, so `cover_live_spread` stays blank for new rows), it reads `ODDS_API_KEY_2H` first, and on the shared
-key it stops at 60 credits.
+key it stopped at 60 credits.
+
+Later on Nov 17 Perseverance moved to its own paid key, and the owner gave this bot the old free key's
+remaining balance. The bot now treats `ODDS_API_KEY` as its own (floor 4 credits; set `SHARED_KEY=1` if another
+app ever shares it again). Perseverance also refuses to spend from any key with a free-size plan, so it can't
+touch this balance even if its secret is still the old key.

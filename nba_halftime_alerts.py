@@ -36,12 +36,13 @@ ODDS_BASE = "https://api.the-odds-api.com/v4/sports/basketball_nba"
 DK_LINK = "https://sportsbook.draftkings.com/leagues/basketball/nba"
 
 # Odds API key. This bot used to share Perseverance's key (ODDS_API_KEY) and spent about half of its November credits
-# without Perseverance's budget knowing (Nov 17, 2026). Give it its own free key as the ODDS_API_KEY_2H secret; until
-# then it falls back to the shared key and stops buying odds when the shared balance is below SHARED_FLOOR, so the
-# betting agent keeps its credits. Alerts still go out either way, just without the DraftKings line.
+# without Perseverance's budget knowing (Nov 17, 2026). The same day Perseverance moved to its own paid key and the
+# owner gave the old free key's remaining balance to this bot, so the repo's ODDS_API_KEY is now this bot's own key
+# (no other app spends from it). An ODDS_API_KEY_2H secret, if ever added, still takes priority. Set SHARED_KEY=1 only
+# if another app starts sharing the key again: then it stops buying odds below SHARED_FLOOR.
 ODDS_API_KEY_2H = os.getenv("ODDS_API_KEY_2H", "").strip()
 ODDS_API_KEY = ODDS_API_KEY_2H or os.getenv("ODDS_API_KEY", "").strip()
-SHARED_KEY = not ODDS_API_KEY_2H
+SHARED_KEY = os.getenv("SHARED_KEY", "") == "1"
 SHARED_FLOOR = int(os.getenv("SHARED_FLOOR", "60"))        # shared key: no odds lookups below this many credits
 OWN_FLOOR = int(os.getenv("OWN_FLOOR", "4"))               # own key: just don't run it to zero
 NTFY_TOPIC = os.getenv("NTFY_TOPIC", "").strip()
