@@ -21,12 +21,16 @@ Every alert is saved to `data/alerts.csv` and graded automatically after the gam
 
 1. **Phone alerts:** install the free **ntfy** app, tap +, and subscribe to a topic name only
    you would guess (e.g. `chance-nba-ht-7k2q`). Anyone who knows the name can read it.
-2. **Odds key:** sign up free at the-odds-api.com and copy your API key. The free plan's
-   500 credits/month is plenty: only alerts use credits (about 4 each), never the score checks.
+2. **Odds key:** sign up free at the-odds-api.com with an email you don't already use there, and copy
+   the API key. Use a key of its own, not Perseverance's: only alerts use credits (2 each: the
+   DraftKings 2nd-half spread and total), never the score checks.
 3. **GitHub:** create a new **public** repo (public = free unlimited Actions minutes; your
    keys stay hidden as secrets) and upload these files, keeping the `.github/workflows` folder.
 4. In the repo: **Settings → Secrets and variables → Actions → New repository secret**:
-   - `ODDS_API_KEY` = your key
+   - `ODDS_API_KEY_2H` = this bot's own key
+   - (`ODDS_API_KEY` is Perseverance's key. Until `ODDS_API_KEY_2H` exists the bot falls back to it, and then
+     it stops buying odds once that key is below 60 credits so the betting agent keeps its credits. The
+     alert still goes out, with "odds skipped" in place of the line.)
    - `NTFY_TOPIC` = your topic name
 5. **Actions tab → NBA halftime alerts → Run workflow** to start it now. After that it starts
    itself every day (afternoon slates and the evening slate) and shuts down when games end.
@@ -53,3 +57,10 @@ prices. Break-even at -110 is 52.4%. Give it a few hundred alerts before trustin
 - Optional Telegram: add `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` secrets.
 - Run locally instead: `NTFY_TOPIC=... ODDS_API_KEY=... python3 nba_halftime_alerts.py --forever`
   (`--test` sends a sample push, `--report` prints the record.)
+
+## Credits (Nov 17, 2026)
+Until Nov 17 this bot used Perseverance's Odds API key and spent about half of that key's November credits
+(4 per halftime lookup, more when it retried for a 2nd-half line), which Perseverance's budget could not see.
+Now each lookup buys only the 2nd-half spread and total (2 credits; the full-game live line is no longer
+recorded, so `cover_live_spread` stays blank for new rows), it reads `ODDS_API_KEY_2H` first, and on the shared
+key it stops at 60 credits.

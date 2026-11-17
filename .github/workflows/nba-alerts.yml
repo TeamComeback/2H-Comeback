@@ -37,7 +37,8 @@ jobs:
 
       - name: Watch live games
         env:
-          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}          # shared with Perseverance: used only until ODDS_API_KEY_2H exists
+          ODDS_API_KEY_2H: ${{ secrets.ODDS_API_KEY_2H }}    # this bot's own free key (preferred)
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -48,7 +49,9 @@ jobs:
             python nba_halftime_alerts.py --test
             python - <<'PY'
           import os, urllib.request, json
-          k = os.environ.get("ODDS_API_KEY", "")
+          own = os.environ.get("ODDS_API_KEY_2H", "")
+          k = own or os.environ.get("ODDS_API_KEY", "")
+          print("Using", "its own key (ODDS_API_KEY_2H)" if own else "the key shared with Perseverance (ODDS_API_KEY): odds stop below 60 credits")
           if not k:
               print("ODDS_API_KEY secret is missing")
           else:

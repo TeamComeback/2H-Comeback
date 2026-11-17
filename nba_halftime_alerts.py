@@ -35,7 +35,15 @@ ESPN_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/
 ODDS_BASE = "https://api.the-odds-api.com/v4/sports/basketball_nba"
 DK_LINK = "https://sportsbook.draftkings.com/leagues/basketball/nba"
 
-ODDS_API_KEY = os.getenv("ODDS_API_KEY", "").strip()
+# Odds API key. This bot used to share Perseverance's key (ODDS_API_KEY) and spent about half of its November credits
+# without Perseverance's budget knowing (Nov 17, 2026). Give it its own free key as the ODDS_API_KEY_2H secret; until
+# then it falls back to the shared key and stops buying odds when the shared balance is below SHARED_FLOOR, so the
+# betting agent keeps its credits. Alerts still go out either way, just without the DraftKings line.
+ODDS_API_KEY_2H = os.getenv("ODDS_API_KEY_2H", "").strip()
+ODDS_API_KEY = ODDS_API_KEY_2H or os.getenv("ODDS_API_KEY", "").strip()
+SHARED_KEY = not ODDS_API_KEY_2H
+SHARED_FLOOR = int(os.getenv("SHARED_FLOOR", "60"))        # shared key: no odds lookups below this many credits
+OWN_FLOOR = int(os.getenv("OWN_FLOOR", "4"))               # own key: just don't run it to zero
 NTFY_TOPIC = os.getenv("NTFY_TOPIC", "").strip()
 NTFY_SERVER = os.getenv("NTFY_SERVER", "https://ntfy.sh").rstrip("/")
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
@@ -51,7 +59,9 @@ ODDS_MAX_RETRIES = 4
 DATA_DIR = os.getenv("DATA_DIR", os.path.join(os.path.dirname(os.path.abspath(__file__)), "data"))
 ALERTS_CSV = os.path.join(DATA_DIR, "alerts.csv")
 
-MARKETS_FULL = "spreads,totals,spreads_h2,totals_h2"
+# 2nd-half spread and total only: 2 credits a lookup (was 4 with the full-game live lines too, Nov 17 2026).
+# If DraftKings has no 2nd-half markets for the game, fall back to the full-game live spread and total (also 2).
+MARKETS_FULL = "spreads_h2,totals_h2"
 MARKETS_FALLBACK = "spreads,totals"
 
 FIELDS = [
@@ -184,12 +194,35 @@ def mascot(name):
 
 
 _events_cache = {"t": 0, "events": []}
+_credits = {"rem": None, "t": 0}
+
+
+def _note_credits(headers):
+    rem = headers.get("x-requests-remaining") or headers.get("X-Requests-Remaining")
+    if rem not in (None, ""):
+        _credits.update(rem=int(float(rem)), t=time.time())
+
+
+def credits_ok(cost=2):
+    """Is there room for a paid lookup? The free events list reports the balance, so check it if the last
+    reading is over two minutes old. Shared key: stop at SHARED_FLOOR so the betting agent keeps its credits."""
+    if time.time() - _credits["t"] > 120:
+        try:
+            events, h = http_json(f"{ODDS_BASE}/events", {"apiKey": ODDS_API_KEY})    # free endpoint
+            _events_cache.update(t=time.time(), events=events)
+            _note_credits(h)
+        except Exception as e:
+            log(f"credit check failed: {e}")
+    floor = SHARED_FLOOR if SHARED_KEY else OWN_FLOOR
+    rem = _credits["rem"]
+    return rem is not None and rem - cost >= floor, rem, floor
 
 
 def find_odds_event(game):
     if time.time() - _events_cache["t"] > 600:
-        events, _ = http_json(f"{ODDS_BASE}/events", {"apiKey": ODDS_API_KEY})  # free endpoint
+        events, h = http_json(f"{ODDS_BASE}/events", {"apiKey": ODDS_API_KEY})  # free endpoint
         _events_cache.update(t=time.time(), events=events)
+        _note_credits(h)
     h, a = mascot(game["home"]["name"]), mascot(game["away"]["name"])
     for ev in _events_cache["events"]:
         if mascot(ev.get("home_team", "")) == h and mascot(ev.get("away_team", "")) == a:
@@ -204,6 +237,12 @@ def fetch_dk_lines(game, trailing_name):
         out["odds_status"] = "no ODDS_API_KEY"
         return out
     try:
+        ok, rem, floor = credits_ok()
+        if not ok:
+            out["odds_status"] = (f"odds skipped: {'shared' if SHARED_KEY else 'own'} key at {rem} credits, floor {floor}"
+                                  if rem is not None else "odds skipped: could not read the credit balance")
+            log(out["odds_status"])
+            return out
         event_id = find_odds_event(game)
         if not event_id:
             _events_cache["t"] = 0
@@ -218,9 +257,10 @@ def fetch_dk_lines(game, trailing_name):
                 raise
             params["markets"] = MARKETS_FALLBACK
             data, headers = http_json(f"{ODDS_BASE}/events/{event_id}/odds", params)
-        remaining = headers.get("x-requests-remaining") or headers.get("X-Requests-Remaining")
-        if remaining:
-            log(f"Odds API credits remaining: {remaining}")
+        _note_credits(headers)
+        if _credits["rem"] is not None:
+            log(f"Odds API credits remaining: {_credits['rem']} ({'shared' if SHARED_KEY else 'own'} key, "
+                f"{headers.get('x-requests-last') or headers.get('X-Requests-Last') or '?'} used by this lookup)")
         books = [b for b in data.get("bookmakers", []) if b.get("key") == "draftkings"]
         if not books:
             out["odds_status"] = "DraftKings lines not posted"
