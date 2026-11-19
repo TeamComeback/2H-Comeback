@@ -75,3 +75,9 @@ date_et,game_id,matchup,trailing,leading,trail_half,lead_half,deficit,trail_is_h
 20261116,401909998,HOU @ MIA,Houston Rockets,Miami Heat,46,62,16,0,0,2026-11-16 20:43:22,,,11.5,-115,227.5,-4.5,-120,119.5,ok,110,128,64,66,-2,L,L,N,1
 20261116,401909997,PHI @ BKN,Brooklyn Nets,Philadelphia 76ers,59,78,19,1,0,2026-11-16 20:49:43,,,18.5,-120,243.5,-0.5,-120,110.5,ok,123,135,64,57,7,W,W,N,1
 20261116,401910000,GS @ NO,Golden State Warriors,New Orleans Pelicans,36,61,25,0,0,2026-11-16 21:14:50,,,17.5,-110,209.5,-6.5,-110,112.5,ok,94,115,58,54,4,L,L,N,1
+20261118,401910008,HOU @ IND,Indiana Pacers,Houston Rockets,46,62,16,1,0,2026-11-18 20:04:41,,,,,,1.5,-120,116.5,ok,104,119,58,57,1,W,,N,1
+20261118,401910009,MIL @ MIA,Milwaukee Bucks,Miami Heat,48,74,26,0,0,2026-11-18 20:29:48,,,,,,0.5,-110,122.5,ok,130,137,82,63,19,W,,N,1
+20261118,401910011,CHI @ BKN,Brooklyn Nets,Chicago Bulls,51,76,25,1,0,2026-11-18 20:34:30,,,,,,-5.5,-120,121.5,ok,107,137,56,61,-5,L,,N,1
+20261118,401910014,ATL @ OKC,Oklahoma City Thunder,Atlanta Hawks,51,64,13,1,0,2026-11-18 21:03:00,,,,,,-6.5,-105,111.5,ok,112,117,61,53,8,W,,N,1
+20261118,401910016,GS @ DAL,Golden State Warriors,Dallas Mavericks,49,62,13,0,0,2026-11-18 21:12:04,,,,,,-0.5,-120,113.5,ok,94,116,45,54,-9,L,,N,1
+20261118,401910015,BOS @ DEN,Denver Nuggets,Boston Celtics,49,61,12,1,0,2026-11-18 22:52:16,,,,,,-1.5,-125,106.5,ok,,,,,,,,,
