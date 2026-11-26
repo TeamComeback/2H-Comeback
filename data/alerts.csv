@@ -90,3 +90,5 @@ date_et,game_id,matchup,trailing,leading,trail_half,lead_half,deficit,trail_is_h
 20261124,401909314,DET @ ORL,Orlando Magic,Detroit Pistons,36,48,12,1,0,2026-11-24 20:08:05,,,,,,-4.5,-120,101.5,ok,86,104,50,56,-6,L,,N,1
 20261124,401909315,BOS @ WSH,Washington Wizards,Boston Celtics,49,80,31,1,0,2026-11-24 21:11:56,,,,,,1.5,-120,107.5,ok,116,131,67,51,16,W,,N,1
 20261124,401909316,DAL @ DEN,Denver Nuggets,Dallas Mavericks,39,58,19,1,0,2026-11-24 23:10:15,,,,,,-9.5,-110,112.5,ok,101,120,62,62,0,L,,N,1
+20261125,401909323,PHX @ HOU,Phoenix Suns,Houston Rockets,56,66,10,0,0,2026-11-25 21:49:45,,,,,,2.5,-115,109.5,ok,104,116,48,50,-2,W,,N,1
+20261125,401909324,SAC @ GS,Sacramento Kings,Golden State Warriors,53,72,19,0,0,2026-11-25 23:08:01,,,,,,-0.5,-115,105.5,ok,110,129,57,57,0,L,,N,1
