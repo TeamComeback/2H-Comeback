@@ -92,3 +92,10 @@ date_et,game_id,matchup,trailing,leading,trail_half,lead_half,deficit,trail_is_h
 20261124,401909316,DAL @ DEN,Denver Nuggets,Dallas Mavericks,39,58,19,1,0,2026-11-24 23:10:15,,,,,,-9.5,-110,112.5,ok,101,120,62,62,0,L,,N,1
 20261125,401909323,PHX @ HOU,Phoenix Suns,Houston Rockets,56,66,10,0,0,2026-11-25 21:49:45,,,,,,2.5,-115,109.5,ok,104,116,48,50,-2,W,,N,1
 20261125,401909324,SAC @ GS,Sacramento Kings,Golden State Warriors,53,72,19,0,0,2026-11-25 23:08:01,,,,,,-0.5,-115,105.5,ok,110,129,57,57,0,L,,N,1
+20261127,401909326,MIA @ NY,New York Knicks,Miami Heat,44,60,16,1,0,2026-11-27 20:11:08,,,,,,-6.5,-115,107.5,ok,105,108,61,48,13,W,,N,1
+20261127,401909328,PHI @ IND,Indiana Pacers,Philadelphia 76ers,44,55,11,1,0,2026-11-27 20:41:17,,,,,,-1.5,-125,111.5,ok,87,111,43,56,-13,L,,N,1
+20261127,401909330,ATL @ BOS,Atlanta Hawks,Boston Celtics,39,51,12,0,0,2026-11-27 21:06:06,,,,,,1.5,-110,108.5,ok,87,86,48,35,13,W,,Y,1
+20261127,401909331,MEM @ MIN,Minnesota Timberwolves,Memphis Grizzlies,50,61,11,1,0,2026-11-27 21:35:15,,,,,,-3.5,-120,106.5,ok,109,114,59,53,6,W,,N,1
+20261127,401909332,DAL @ PHX,Dallas Mavericks,Phoenix Suns,53,63,10,0,0,2026-11-27 22:09:45,,,,,,-0.5,-115,108.5,ok,113,109,60,46,14,W,,Y,1
+20261127,401909333,LAL @ SA,San Antonio Spurs,Los Angeles Lakers,38,54,16,1,0,2026-11-27 22:40:34,,,,,,-9.5,-110,109.5,ok,99,96,61,42,19,W,,Y,1
+20261127,401909336,GS @ POR,Golden State Warriors,Portland Trail Blazers,44,67,23,0,0,2026-11-27 22:43:55,,,,,,-0.5,-110,111.5,ok,94,116,50,49,1,W,,N,1
